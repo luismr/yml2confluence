@@ -1,0 +1,42 @@
+* environments
+** <name>
+*** description:
+*** type:
+*** automated:
+*** provision
+**** job:
+**** playbook:
+*** endpoints
+**** <name>
+***** description:
+***** type:
+***** credentialsId:
+***** credentials:
+***** URL:
+***** Login URL:
+***** Healthcheck URL:
+***** Host:
+***** Port:
+***** ConnectionURL:
+***** Capabilities:
+****** <key>: <value>
+*** variables
+**** <key>: <value>
+*** selectors
+**** <key>: <value>
+
+* credentials
+** <name>
+*** type:
+*** username:
+*** password:
+*** identity:
+*** access_key:
+*** secret_key:
+*** session_token:
+
+* variables
+** <key>: <value>
+
+* selectors
+** <key>: <value>
