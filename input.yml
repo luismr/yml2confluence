@@ -4,40 +4,40 @@ environments:
     description: # optional, what is the purpose of the environment
     automated: # true/false, MQA won't touch automated envs
     provision: # optional, if exists, should define one field
-job: # Jenkins job link which creates environment and returns
-     # endpoints data as an artifact called "endpoints.yaml",
-     # the result will be merged with "endpoints" section
-  playbook: # a link to a playbook on how to create environment;
-            # endpoints data should be a result of document
-            # execution
-  endpoints:
-    - name: # variable name for the endpoint
-      description: # optional, what is the purpose of the endpoint
-      type: # http, RDP, VNC, ssh, selenium, mysql, sqlserver, postgresql, derby, oracle, db2, tcp
-      credentials: # optional, credentials id (name)
-  credentialsId: # optional, credentials id (name)
-    credentials: # optional, see "credentials" section for format, can be used in dynamic provisioning only
-      # if (type == http)
-      URL: # main URL
-      Login URL: # optional, URL for login credentials check
-      Healthcheck URL: # optional, other URLs would be used
-      # endif (type == http)
-      # if (type in (rdp, vnc, ssh, tcp))
-      Host: # IP address or hostname
-      Port: # Port
-      # endif (type in (rdp, vnc, ssh, tcp))
-      # if (type == selenium)
-      URL: # Selenium server URL
-      Capabilities:
-      # key-value pairs for desired Selenium capabilities
-      # endif (type == selenium)
-      # if (type in (mysql, sqlserver, postgresql, derby, oracle, db2))
-      ConnectionURL: # db-specific connection URL
-      # endif (type in (mysql, sqlserver, postgresql, derby, oracle, db2))
-  variables:
-    # key-value pairs for environment-dependant data
-  selectors:
-    # key-value pairs for environment-dependant XPath selectors
+      job: # Jenkins job link which creates environment and returns
+           # endpoints data as an artifact called "endpoints.yaml",
+           # the result will be merged with "endpoints" section
+      playbook: # a link to a playbook on how to create environment;
+                # endpoints data should be a result of document
+                # execution
+    endpoints:
+      - name: # variable name for the endpoint
+        description: # optional, what is the purpose of the endpoint
+        type: # http, RDP, VNC, ssh, selenium, mysql, sqlserver, postgresql, derby, oracle, db2, tcp
+        credentials: # optional, credentials id (name)
+        credentialsId: # optional, credentials id (name)
+        credentials: # optional, see "credentials" section for format, can be used in dynamic provisioning only
+        # if (type == http)
+        URL: # main URL
+        Login URL: # optional, URL for login credentials check
+        Healthcheck URL: # optional, other URLs would be used
+        # endif (type == http)
+        # if (type in (rdp, vnc, ssh, tcp))
+        Host: # IP address or hostname
+        Port: # Port
+        # endif (type in (rdp, vnc, ssh, tcp))
+        # if (type == selenium)
+        URL: # Selenium server URL
+        Capabilities:
+        # key-value pairs for desired Selenium capabilities
+        # endif (type == selenium)
+        # if (type in (mysql, sqlserver, postgresql, derby, oracle, db2))
+        ConnectionURL: # db-specific connection URL
+        # endif (type in (mysql, sqlserver, postgresql, derby, oracle, db2))
+variables:
+  # key-value pairs for environment-dependant data
+selectors:
+  # key-value pairs for environment-dependant XPath selectors
 
 credentials:
   - name: # credentials id (name)
