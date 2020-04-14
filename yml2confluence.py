@@ -36,13 +36,15 @@ class ConvertService(object):
 
     def __step_into_yml(self, items):
         for key, value in items:
+            if key == "name":
+                continue
             print(self.__repeat_to_length("*", self.__level), end="")
             if isinstance(value, list):
                 print(" {}:".format(key))
                 self.__down()
                 for i in range(len(value)):
                     print(self.__repeat_to_length("*", self.__level), end="")
-                    print(" {}-{}:".format(key, i))
+                    print(" {}:".format(value[i]["name"]))
                     self.__down()
                     self.__step_into_yml(value[i].items())
                     self.__up()
